@@ -1,53 +1,72 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  </head>
-  <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
-    <div class="modal fade" id="popup" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header"><button type="button" class="btn-close" aria-label="Close" onclick="{document.getElementById('popup').remove();document.getElementsByClassName('modal-backdrop')[0].remove()}">X</button></div>
-          <h2>GET STARTED</h2>
-          <h3>Choose any three implements and save an <strong>additional $300!</strong></h3>
-          {form}TractorPackages{/form}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+  </script>
+
+  <div class="modal fade" id="popup" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header"><button type="button" class="btn-close" aria-label="Close"
+            onclick="{document.getElementById('popup').remove();document.getElementsByClassName('modal-backdrop')[0].remove()}">X</button>
         </div>
+        <img src = 'https://www.jamesriverequipment.com/img/JRAT%2008-18-23%20Labor%20Day%20(1080x1080).jpg'>
       </div>
-      </div>
-    <script>
-      const delaySeconds = 10;
-      const delayMilliseconds = delaySeconds * 1000;
+    </div>
+  </div>
+  <script>
+    const delaySeconds = 10;
+    const delayMilliseconds = delaySeconds * 1000;
 
-      document.addEventListener("DOMContentLoaded", function() {
-        setTimeout(function() {
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const currentdate = new Date();
+
+      let startDate = new Date(2023, 8, 1);
+      let endDate = new Date(2023, 8, 5);
+
+      console.log(currentdate, startDate, endDate)
+
+      if (currentdate >= startDate && currentdate <= endDate) {
+        setTimeout(function () {
           console.log('show');
           var modal = new bootstrap.Modal(document.getElementById('popup'), {
             keyboard: false
-          }); 
+          });
           modal.show();
         }, delayMilliseconds);
-      });
-            //close modal when close button is clicked
-            var closemodal = document.getElementsByClassName("btn-close")[0];
-      closemodal.addEventListener("click", function() {
-        var modal = document.getElementById('popup');
-        modal.remove();
-        var backdrop = document.getElementsByClassName("modal-backdrop")[0];
-        backdrop.remove();
-      });
-      function closemodal() {
-        var modal = document.getElementById('popup');
-        modal.remove();
-        var backdrop = document.getElementsByClassName("modal-backdrop")[0];
-        backdrop.remove();
       }
-    </script>
 
 
-  </body>
+    });
+    //close modal when close button is clicked
+    var closemodal = document.getElementsByClassName("btn-close")[0];
+    closemodal.addEventListener("click", function () {
+      var modal = document.getElementById('popup');
+      modal.remove();
+      var backdrop = document.getElementsByClassName("modal-backdrop")[0];
+      backdrop.remove();
+    });
+
+    function closemodal() {
+      var modal = document.getElementById('popup');
+      modal.remove();
+      var backdrop = document.getElementsByClassName("modal-backdrop")[0];
+      backdrop.remove();
+    }
+  </script>
+
+
+</body>
+
 </html>
