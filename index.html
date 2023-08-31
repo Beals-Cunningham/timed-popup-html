@@ -16,16 +16,19 @@
 
   <div class="modal fade" id="popup" tabindex="-1" role="dialog">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header"><button type="button" class="btn-close" aria-label="Close"
-            onclick="{document.getElementById('popup').remove();document.getElementsByClassName('modal-backdrop')[0].remove()}">X</button>
-        </div>
-        <img src = 'https://www.jamesriverequipment.com/img/JRAT%2008-18-23%20Labor%20Day%20(1080x1080).jpg'>
+      <div class="modal-content" style="padding:10px">
+        <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span
+              aria-hidden="true">x</span> </button></div>
+        <h2>ENTER TO WIN</h2>
+        <p style="font-size:22px">Schedule your service online for a chance to win <strong>3 years of FREE
+            maintenance!</strong></p>
+        <a class="btn-btn-lrg btn-primary view-details" style = "width:fit-content!important;" href="https://heritagetractor.com/schedule-service">Schedule
+          Now</a>
       </div>
     </div>
   </div>
   <script>
-    const delaySeconds = 10;
+    const delaySeconds = 15;
     const delayMilliseconds = delaySeconds * 1000;
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -33,7 +36,7 @@
       const currentdate = new Date();
 
       let startDate = new Date(2023, 8, 1);
-      let endDate = new Date(2023, 8, 5);
+      let endDate = new Date(2093, 8, 1);
 
       console.log(currentdate, startDate, endDate)
 
